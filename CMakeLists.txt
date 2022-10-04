@@ -8,19 +8,17 @@ set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 
 include_directories(${CMAKE_SOURCE_DIR}/include/ ${CMAKE_SOURCE_DIR}/src/)
 
-set (   HEADER_FILES
-        ${CMAKE_SOURCE_DIR}/include/fibonacci.hpp   )
+file(	GLOB HEADER_FILES "${CMAKE_SOURCE_DIR}/include/*.hpp"	)
 message("HEADER_FILES ${HEADER_FILES}")
 
-set (   SOURCE_FILE
-        ${CMAKE_SOURCE_DIR}/src/fibonacci.cpp   )
+file(	GLOB SOURCE_FILE "${CMAKE_SOURCE_DIR}/src/*.cpp"	)
 message("SOURCE_FILE ${SOURCE_FILE}")
 
 add_library(    ${CMAKE_PROJECT_NAME} 
                 ${HEADER_FILES}
                 ${SOURCE_FILE}  )
 
-add_executable( ${CMAKE_PROJECT_NAME}_TEST
+add_executable( ${CMAKE_PROJECT_NAME}_MAIN
                 main.cpp 
                 ${HEADER_FILES}
                 ${SOURCE_FILE} )
