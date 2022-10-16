@@ -2,9 +2,11 @@ cmake_minimum_required(VERSION 3.10)
 
 project(LEARNCPP LANGUAGES C CXX)
 
-set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 set(CMAKE_POSITION_INDEPENDENT_CODE ON)
+
+set(CMAKE_BUILD_TYPE "Debug" CACHE STRING "Build type (default Debug)")
 
 include_directories(${CMAKE_SOURCE_DIR}/include/ ${CMAKE_SOURCE_DIR}/src/)
 
